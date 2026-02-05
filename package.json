@@ -1,12 +1,13 @@
 {
   "name": "@jorcleme/cisco-icons-core",
   "version": "0.1.0",
-  "type": "module",
-  "description": "Framework-agnostic SVG icon library based on Phosphor Icons + Cisco branded icons",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "description": "Icon catalog and assets for Cisco Icons (Phosphor + Cisco branded)",
   "license": "MIT",
+  "author": {
+    "name": "Jordan Clemens",
+    "email": "jorcleme@cisco.com",
+    "url": "https://jordan-clemens-dev.netlify.app"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jorcleme/cisco-icons-core.git"
@@ -15,77 +16,58 @@
   "bugs": {
     "url": "https://github.com/jorcleme/cisco-icons-core/issues"
   },
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs",
-      "types": "./dist/index.d.ts"
-    },
-    "./icons.json": "./dist/icons.json",
-    "./cisco/regular/*.svg": {
-      "import": "./dist/cisco/regular/*.svg.js",
-      "require": "./dist/cisco/regular/*.svg.cjs",
-      "types": "./dist/cisco/regular/*.svg.d.ts"
-    },
-    "./phosphor/bold/*.svg": {
-      "import": "./dist/phosphor/bold/*.svg.js",
-      "require": "./dist/phosphor/bold/*.svg.cjs",
-      "types": "./dist/phosphor/bold/*.svg.d.ts"
-    },
-    "./phosphor/duotone/*.svg": {
-      "import": "./dist/phosphor/duotone/*.svg.js",
-      "require": "./dist/phosphor/duotone/*.svg.cjs",
-      "types": "./dist/phosphor/duotone/*.svg.d.ts"
-    },
-    "./phosphor/fill/*.svg": {
-      "import": "./dist/phosphor/fill/*.svg.js",
-      "require": "./dist/phosphor/fill/*.svg.cjs",
-      "types": "./dist/phosphor/fill/*.svg.d.ts"
-    },
-    "./phosphor/light/*.svg": {
-      "import": "./dist/phosphor/light/*.svg.js",
-      "require": "./dist/phosphor/light/*.svg.cjs",
-      "types": "./dist/phosphor/light/*.svg.d.ts"
-    },
-    "./phosphor/regular/*.svg": {
-      "import": "./dist/phosphor/regular/*.svg.js",
-      "require": "./dist/phosphor/regular/*.svg.cjs",
-      "types": "./dist/phosphor/regular/*.svg.d.ts"
-    },
-    "./phosphor/thin/*.svg": {
-      "import": "./dist/phosphor/thin/*.svg.js",
-      "require": "./dist/phosphor/thin/*.svg.cjs",
-      "types": "./dist/phosphor/thin/*.svg.d.ts"
-    }
-  },
-  "files": [
-    "dist",
-    "src"
-  ],
-  "scripts": {
-    "build": "bun run tools/generate.ts",
-    "clean": "rm -rf dist"
-  },
-  "sideEffects": false,
   "keywords": [
     "icons",
     "svg",
     "phosphor",
     "cisco"
   ],
-  "author": {
-    "name": "Jordan Clemens",
-    "email": "jorcleme@cisco.com",
-    "url": "https://jordan-clemens-dev.netlify.app"
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./assets/phosphor/thin/*.svg": "./assets/phosphor/thin/*.svg",
+    "./assets/phosphor/light/*.svg": "./assets/phosphor/light/*.svg",
+    "./assets/phosphor/regular/*.svg": "./assets/phosphor/regular/*.svg",
+    "./assets/phosphor/bold/*.svg": "./assets/phosphor/bold/*.svg",
+    "./assets/phosphor/fill/*.svg": "./assets/phosphor/fill/*.svg",
+    "./assets/phosphor/duotone/*.svg": "./assets/phosphor/duotone/*.svg",
+    "./assets/cisco/regular/*.svg": "./assets/cisco/regular/*.svg",
+    "./phosphor/thin/*.svg": "./assets/phosphor/thin/*.svg",
+    "./phosphor/light/*.svg": "./assets/phosphor/light/*.svg",
+    "./phosphor/regular/*.svg": "./assets/phosphor/regular/*.svg",
+    "./phosphor/bold/*.svg": "./assets/phosphor/bold/*.svg",
+    "./phosphor/fill/*.svg": "./assets/phosphor/fill/*.svg",
+    "./phosphor/duotone/*.svg": "./assets/phosphor/duotone/*.svg",
+    "./cisco/regular/*.svg": "./assets/cisco/regular/*.svg"
+  },
+  "files": [
+    "dist",
+    "assets"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "clean": "rm -rf dist assets",
+    "collate": "bun run scripts/collate.ts",
+    "catalog": "bun run scripts/catalog.ts",
+    "build:assets": "bun run collate && bun run catalog",
+    "build:lib": "vite build && tsc --emitDeclarationOnly",
+    "build": "bun run clean && bun run build:assets && bun run build:lib"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
   "devDependencies": {
-    "@types/fs-extra": "^11.0.4",
-    "@types/node": "^25.1.0",
-    "chalk": "^5.6.2",
-    "fs-extra": "^11.3.3",
-    "typescript": "^5.9.3"
+    "@types/bun": "^1.3.8",
+    "@types/node": "^22.0.0",
+    "chalk": "^5.4.1",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.0"
   }
 }

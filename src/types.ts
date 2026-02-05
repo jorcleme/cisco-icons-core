@@ -1,32 +1,21 @@
-/**
- * @jorcleme/cisco-icons-core - Type Definitions
- */
+export enum IconWeight {
+  THIN = "thin",
+  LIGHT = "light",
+  REGULAR = "regular",
+  BOLD = "bold",
+  FILL = "fill",
+  DUOTONE = "duotone",
+}
 
-export type IconWeight = 'thin' | 'light' | 'regular' | 'bold' | 'fill' | 'duotone';
-
-export type IconFamily = 'phosphor' | 'cisco';
+export enum IconFamily {
+  PHOSPHOR = "phosphor",
+  CISCO = "cisco",
+}
 
 export interface IconEntry {
   name: string;
+  pascal_name: string;
   family: IconFamily;
-  weights: IconWeight[];
-}
-
-export interface PhosphorIconEntry extends IconEntry {
-  family: 'phosphor';
-}
-
-export interface CiscoAssetEntry extends IconEntry {
-  family: 'cisco';
-  weights: ['regular'];
-}
-
-export type Icon = PhosphorIconEntry | CiscoAssetEntry;
-
-export function isPhosphorIcon(icon: Icon): icon is PhosphorIconEntry {
-  return icon.family === 'phosphor';
-}
-
-export function isCiscoIcon(icon: Icon): icon is CiscoAssetEntry {
-  return icon.family === 'cisco';
+  weights: readonly IconWeight[];
+  tags: readonly string[];
 }
