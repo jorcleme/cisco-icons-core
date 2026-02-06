@@ -58,7 +58,8 @@
     "catalog": "bun run scripts/catalog.ts",
     "build:assets": "bun run collate && bun run catalog",
     "build:lib": "vite build && tsc --emitDeclarationOnly",
-    "build": "bun run clean && bun run build:assets && bun run build:lib"
+    "build": "bun run clean && bun run build:assets && bun run build:lib",
+    "prepublishOnly": "bun run build"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"

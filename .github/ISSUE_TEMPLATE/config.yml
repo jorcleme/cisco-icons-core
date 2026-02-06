@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions & Discussions
+    url: https://github.com/jorcleme/cisco-icons-core/discussions
+    about: Ask questions or start a discussion about usage, best practices, etc.
+  - name: Phosphor Icons
+    url: https://phosphoricons.com/
+    about: Browse the full Phosphor icon set
+  - name: Security Vulnerability
+    url: https://github.com/jorcleme/cisco-icons-core/security/advisories
+    about: Report security issues privately via GitHub Security Advisory

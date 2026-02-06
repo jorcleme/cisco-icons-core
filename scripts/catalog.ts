@@ -8,8 +8,9 @@ import {
   ASSETS_PATH,
   ICONS_PATH,
   PHOSPHOR_WEIGHTS,
-  kebabToPascal,
-  getIconNameFromFilename
+  pascalize,
+  getIconNameFromFilename,
+  normalizeIconName
 } from './index.js';
 
 interface IconData {
@@ -39,7 +40,7 @@ async function main() {
       if (!iconMap.has(key)) {
         iconMap.set(key, {
           name: iconName,
-          pascal_name: kebabToPascal(iconName),
+          pascal_name: pascalize(iconName),
           family: 'phosphor',
           weights: []
         });
@@ -57,12 +58,12 @@ async function main() {
     const files = fs.readdirSync(ciscoDir).filter((f) => f.endsWith('.svg'));
 
     for (const file of files) {
-      const iconName = path.parse(file).name;
-      const key = `cisco:${iconName}`;
+      const normalizedName = normalizeIconName(file);
+      const key = `cisco:${normalizedName}`;
 
       iconMap.set(key, {
-        name: iconName,
-        pascal_name: kebabToPascal(iconName),
+        name: normalizedName,
+        pascal_name: pascalize(normalizedName),
         family: 'cisco',
         weights: ['regular']
       });
