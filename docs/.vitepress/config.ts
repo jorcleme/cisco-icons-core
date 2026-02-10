@@ -10,7 +10,7 @@ function serveIconAssets(): VitePlugin {
     name: 'serve-icon-assets',
     configureServer(server): void {
       server.middlewares.use((req, res, next) => {
-        const url = req.url?.replace(/^\/cisco-icons-core/, '') ?? '';
+        const url = req.url ?? '';
         if (!url.startsWith('/assets/')) return next();
 
         const filePath = resolve(repoRoot, url.slice(1));
@@ -29,7 +29,7 @@ function serveIconAssets(): VitePlugin {
 export default defineConfig({
   title: 'Cisco Icons',
   description: 'Phosphor Icons + Cisco branded icons for every framework',
-  base: '/cisco-icons-core/',
+  base: '/',
 
   head: [
     [
@@ -37,7 +37,7 @@ export default defineConfig({
       {
         rel: 'icon',
         type: 'image/svg+xml',
-        href: '/cisco-icons-core/logo.svg',
+        href: '/logo.svg',
         media: '(prefers-color-scheme: light)'
       }
     ],
@@ -46,7 +46,7 @@ export default defineConfig({
       {
         rel: 'icon',
         type: 'image/svg+xml',
-        href: '/cisco-icons-core/logo-dark.svg',
+        href: '/logo-dark.svg',
         media: '(prefers-color-scheme: dark)'
       }
     ],
