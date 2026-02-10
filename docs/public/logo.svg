@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="180" viewBox="0 0 140 180" fill="none">
+  <!-- cisco-icons Circuit Logo — Light variant -->
+  <path d="M 85 16 C 55 16, 55 40, 55 56 C 55 72, 55 80, 38 90 C 55 100, 55 108, 55 124 C 55 140, 55 164, 85 164" stroke="url(#brand-grad-light)" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <circle cx="55" cy="42" r="6" fill="#34d399"/>
+  <circle cx="38" cy="90" r="7.5" fill="#059669"/>
+  <circle cx="55" cy="138" r="6" fill="#047857"/>
+  <line x1="61" y1="42" x2="100" y2="42" stroke="#34d399" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
+  <line x1="45.5" y1="90" x2="100" y2="90" stroke="#059669" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
+  <line x1="61" y1="138" x2="100" y2="138" stroke="#047857" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
+  <circle cx="100" cy="42" r="2.5" fill="#34d399" opacity="0.4"/>
+  <circle cx="100" cy="90" r="2.5" fill="#059669" opacity="0.4"/>
+  <circle cx="100" cy="138" r="2.5" fill="#047857" opacity="0.4"/>
+  <defs>
+    <linearGradient id="brand-grad-light" x1="38" y1="16" x2="38" y2="164">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="50%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+  </defs>
+</svg>

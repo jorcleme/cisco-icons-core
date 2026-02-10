@@ -1,0 +1,214 @@
+/* cisco-icons — Mint Emerald VitePress Theme */
+
+/* ============================================
+   FONTS
+   ============================================ */
+:root {
+  --vp-font-family-base: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --vp-font-family-mono:
+    'Ubuntu Mono', ui-monospace, 'Cascadia Code', 'Source Code Pro', monospace;
+}
+
+/* ============================================
+   LIGHT MODE COLORS
+   ============================================ */
+:root {
+  /* Brand Colors */
+  --vp-c-brand-1: #10b981;
+  --vp-c-brand-2: #059669;
+  --vp-c-brand-3: #047857;
+  --vp-c-brand-soft: rgba(16, 185, 129, 0.14);
+
+  /* Background */
+  --vp-c-bg: #ffffff;
+  --vp-c-bg-soft: #f7f9f8;
+  --vp-c-bg-mute: #f7f9f8;
+  --vp-c-bg-alt: #f7f9f8;
+
+  /* Borders */
+  --vp-c-border: #e2e8e5;
+  --vp-c-divider: #e2e8e5;
+  --vp-c-gutter: #e2e8e5;
+
+  /* Text */
+  --vp-c-text-1: #1a1a2e;
+  --vp-c-text-2: #555555;
+  --vp-c-text-3: #777777;
+
+  /* Buttons */
+  --vp-button-brand-bg: #10b981;
+  --vp-button-brand-hover-bg: #059669;
+  --vp-button-brand-active-bg: #047857;
+  --vp-button-brand-text: #ffffff;
+  --vp-button-brand-border: transparent;
+
+  --vp-button-alt-bg: rgba(16, 185, 129, 0.08);
+  --vp-button-alt-hover-bg: rgba(16, 185, 129, 0.14);
+  --vp-button-alt-text: #059669;
+  --vp-button-alt-border: transparent;
+
+  /* Home Hero */
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+
+  /* Home Hero Image Glow */
+  --vp-home-hero-image-background-image: linear-gradient(135deg, #10b98133 0%, #05966933 100%);
+  --vp-home-hero-image-filter: blur(44px);
+
+  /* Code Blocks */
+  --vp-code-block-bg: #f7f9f8;
+  --vp-code-tab-active-bar-color: #10b981;
+
+  /* Custom Highlight */
+  --vp-custom-block-tip-bg: rgba(16, 185, 129, 0.08);
+  --vp-custom-block-tip-border: #10b981;
+  --vp-custom-block-tip-text: #1a1a2e;
+  --vp-custom-block-tip-code-bg: rgba(16, 185, 129, 0.05);
+}
+
+/* ============================================
+   DARK MODE COLORS
+   ============================================ */
+.dark {
+  /* Brand Colors */
+  --vp-c-brand-1: #6ee7b7;
+  --vp-c-brand-2: #34d399;
+  --vp-c-brand-3: #10b981;
+  --vp-c-brand-soft: rgba(110, 231, 183, 0.1);
+
+  /* Background */
+  --vp-c-bg: #09090f;
+  --vp-c-bg-soft: #0f0f17;
+  --vp-c-bg-mute: #0f0f17;
+  --vp-c-bg-alt: #0f0f17;
+
+  /* Borders */
+  --vp-c-border: #161620;
+  --vp-c-divider: #161620;
+  --vp-c-gutter: #1e1e2a;
+
+  /* Text */
+  --vp-c-text-1: #e0e0e8;
+  --vp-c-text-2: #888888;
+  --vp-c-text-3: #666666;
+
+  /* Buttons */
+  --vp-button-brand-bg: #10b981;
+  --vp-button-brand-hover-bg: #34d399;
+  --vp-button-brand-active-bg: #059669;
+  --vp-button-brand-text: #ffffff;
+  --vp-button-brand-border: transparent;
+
+  --vp-button-alt-bg: rgba(110, 231, 183, 0.08);
+  --vp-button-alt-hover-bg: rgba(110, 231, 183, 0.12);
+  --vp-button-alt-text: #6ee7b7;
+  --vp-button-alt-border: transparent;
+
+  /* Home Hero (same gradient, lighter for dark mode) */
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(135deg, #6ee7b7 0%, #10b981 50%, #059669 100%);
+
+  /* Home Hero Image Glow */
+  --vp-home-hero-image-background-image: linear-gradient(135deg, #6ee7b722 0%, #10b98122 100%);
+  --vp-home-hero-image-filter: blur(60px);
+
+  /* Code Blocks */
+  --vp-code-block-bg: #0f0f17;
+  --vp-code-tab-active-bar-color: #10b981;
+
+  /* Custom Highlight */
+  --vp-custom-block-tip-bg: rgba(110, 231, 183, 0.08);
+  --vp-custom-block-tip-border: #10b981;
+  --vp-custom-block-tip-text: #e0e0e8;
+  --vp-custom-block-tip-code-bg: rgba(110, 231, 183, 0.05);
+}
+
+/* ============================================
+   SEMANTIC COLORS (Light/Dark Agnostic)
+   ============================================ */
+:root {
+  --vp-c-warning-1: #f59e0b;
+  --vp-c-warning-2: #d97706;
+  --vp-c-warning-3: #b45309;
+  --vp-c-warning-soft: rgba(245, 158, 11, 0.14);
+
+  --vp-c-danger-1: #ef4444;
+  --vp-c-danger-2: #dc2626;
+  --vp-c-danger-3: #b91c1c;
+  --vp-c-danger-soft: rgba(239, 68, 68, 0.14);
+
+  --vp-c-info-1: #3b82f6;
+  --vp-c-info-2: #2563eb;
+  --vp-c-info-3: #1d4ed8;
+  --vp-c-info-soft: rgba(59, 130, 246, 0.14);
+}
+
+/* ============================================
+   TYPOGRAPHY REFINEMENTS
+   ============================================ */
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3,
+.vp-doc h4,
+.vp-doc h5,
+.vp-doc h6 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.vp-doc h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.vp-doc code {
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+/* ============================================
+   HOME HERO TWEAKS
+   ============================================ */
+.VPHero .name {
+  background: var(--vp-home-hero-name-background);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: var(--vp-home-hero-name-color);
+}
+
+/* ============================================
+   NAVBAR REFINEMENTS
+   ============================================ */
+.VPNavBar {
+  backdrop-filter: blur(12px);
+}
+
+/* ============================================
+   CODE BLOCK ACTIVE TAB
+   ============================================ */
+.vp-code-group .tabs label.active {
+  border-bottom-color: var(--vp-code-tab-active-bar-color);
+}
+
+/* ============================================
+   LINK HOVER STATES
+   ============================================ */
+.vp-doc a:hover {
+  color: var(--vp-c-brand-1);
+}
+
+.dark .vp-doc a:hover {
+  color: var(--vp-c-brand-2);
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  height: 100%;
+  align-items: center;
+}
+
+.box .details {
+  text-align: center;
+}

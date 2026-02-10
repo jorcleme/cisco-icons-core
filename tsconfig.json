@@ -22,5 +22,5 @@
     "noUnusedParameters": true
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", "scripts", "assets", "raw", "tools"]
+  "exclude": ["node_modules", "dist", "scripts", "assets", "raw", "tools", "docs"]
 }

@@ -7,6 +7,8 @@ import {
   ASSETS_PATH,
   RAW_PATH,
   PHOSPHOR_WEIGHTS,
+  normalizeIconName,
+  getIconNameFromFilename,
   type PhosphorWeight,
 } from "./index.js";
 
@@ -53,8 +55,12 @@ async function processPhosphorWeight(weight: PhosphorWeight): Promise<number> {
   let count = 0;
 
   for (const file of files) {
+    // Strip weight suffix from filename (e.g., "acorn-thin.svg" → "acorn.svg")
+    const iconName = getIconNameFromFilename(file);
+    const destFilename = `${iconName}.svg`;
+
     const srcPath = path.join(srcDir, file);
-    const destPath = path.join(destDir, file);
+    const destPath = path.join(destDir, destFilename);
 
     const content = await fs.promises.readFile(srcPath, "utf-8");
     const processed = replaceColorLiterals(content);
@@ -78,10 +84,24 @@ async function processCiscoIcons(): Promise<number> {
 
   const files = fs.readdirSync(srcDir).filter((f) => f.endsWith(".svg"));
   let count = 0;
+  const seen = new Map<string, string>();
 
   for (const file of files) {
+    const normalized = normalizeIconName(file);
+    const destFilename = `${normalized}.svg`;
+
+    if (seen.has(normalized)) {
+      console.log(
+        chalk.yellow(
+          `  ⚠ Collision: "${file}" → "${destFilename}" (already mapped from "${seen.get(normalized)}")`
+        )
+      );
+      continue;
+    }
+    seen.set(normalized, file);
+
     const srcPath = path.join(srcDir, file);
-    const destPath = path.join(destDir, file);
+    const destPath = path.join(destDir, destFilename);
 
     const content = await fs.promises.readFile(srcPath, "utf-8");
     const processed = replaceColorLiterals(content);

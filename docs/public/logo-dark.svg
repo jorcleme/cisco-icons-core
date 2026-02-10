@@ -1,0 +1,23 @@
+<svg viewBox="0 0 140 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Curly brace path -->
+      <path d="M 85 16 C 55 16, 55 40, 55 56 C 55 72, 55 80, 38 90 C 55 100, 55 108, 55 124 C 55 140, 55 164, 85 164" stroke="url(#grad1)" stroke-width="5" stroke-linecap="round" fill="none"></path>
+      <!-- Nodes -->
+      <circle cx="55" cy="42" r="6" fill="#2dd4bf" opacity="0.9"></circle>
+      <circle cx="38" cy="90" r="7.5" fill="#06b6d4" opacity="1"></circle>
+      <circle cx="55" cy="138" r="6" fill="#3b82f6" opacity="0.9"></circle>
+      <!-- Node connection lines extending right -->
+      <line x1="61" y1="42" x2="100" y2="42" stroke="#2dd4bf" stroke-width="1.5" opacity="0.35" stroke-linecap="round"></line>
+      <line x1="45.5" y1="90" x2="100" y2="90" stroke="#06b6d4" stroke-width="1.5" opacity="0.35" stroke-linecap="round"></line>
+      <line x1="61" y1="138" x2="100" y2="138" stroke="#3b82f6" stroke-width="1.5" opacity="0.35" stroke-linecap="round"></line>
+      <!-- Small endpoint dots -->
+      <circle cx="100" cy="42" r="2.5" fill="#2dd4bf" opacity="0.5"></circle>
+      <circle cx="100" cy="90" r="2.5" fill="#06b6d4" opacity="0.5"></circle>
+      <circle cx="100" cy="138" r="2.5" fill="#3b82f6" opacity="0.5"></circle>
+      <defs>
+        <linearGradient id="grad1" x1="38" y1="16" x2="38" y2="164">
+          <stop offset="0%" stop-color="#2dd4bf"></stop>
+          <stop offset="50%" stop-color="#06b6d4"></stop>
+          <stop offset="100%" stop-color="#3b82f6"></stop>
+        </linearGradient>
+      </defs>
+    </svg>
